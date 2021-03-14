@@ -7,20 +7,26 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #1634;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.SignUpPage">
    <children>
-      <TextField alignment="TOP_CENTER" blendMode="HARD_LIGHT" layoutX="39.0" layoutY="88.0" promptText="Name" />
-      <TextField alignment="TOP_CENTER" blendMode="HARD_LIGHT" cacheShape="false" centerShape="false" focusTraversable="false" layoutX="39.0" layoutY="161.0" promptText="Last Name" scaleShape="false">
+      <TextField fx:id="name" alignment="TOP_CENTER" blendMode="HARD_LIGHT" layoutX="39.0" layoutY="88.0" promptText="Name" />
+      <TextField fx:id="lastName" alignment="TOP_CENTER" blendMode="HARD_LIGHT" cacheShape="false" centerShape="false" focusTraversable="false" layoutX="39.0" layoutY="161.0" promptText="Last Name" scaleShape="false">
          <cursor>
             <Cursor fx:constant="NW_RESIZE" />
          </cursor>
       </TextField>
-      <TextField alignment="TOP_CENTER" blendMode="HARD_LIGHT" layoutX="367.0" layoutY="88.0" promptText="Username" />
-      <DatePicker blendMode="LIGHTEN" layoutX="57.0" layoutY="228.0" prefHeight="26.0" prefWidth="112.0" promptText="Birthday" />
-      <Button cache="true" cacheHint="SCALE" depthTest="ENABLE" layoutX="258.0" layoutY="342.0" prefHeight="26.0" prefWidth="83.0" text="Sign Up!" />
-      <PasswordField alignment="TOP_CENTER" blendMode="HARD_LIGHT" layoutX="367.0" layoutY="161.0" promptText="Password" />
-      <Label layoutX="412.0" layoutY="200.0" prefHeight="18.0" prefWidth="57.0" text="Label" />
+      <TextField fx:id="username" alignment="TOP_CENTER" blendMode="HARD_LIGHT" layoutX="367.0" layoutY="88.0" promptText="Username" />
+      <DatePicker fx:id="datePicker" blendMode="LIGHTEN" layoutX="57.0" layoutY="228.0" prefHeight="26.0" prefWidth="112.0" promptText="Birthday" />
+      <Button cache="true" cacheHint="SCALE" depthTest="ENABLE" layoutX="258.0" layoutY="312.0" prefHeight="26.0" prefWidth="83.0" text="Sign Up!" />
+      <PasswordField fx:id="passwordField" alignment="TOP_CENTER" blendMode="HARD_LIGHT" layoutX="367.0" layoutY="161.0" promptText="Password" />
+      <Label fx:id="wrongPasswordLabel" alignment="TOP_CENTER" layoutX="383.0" layoutY="200.0" prefHeight="18.0" prefWidth="112.0" text="Label" />
+      <Label fx:id="wrongSignUpLabel" layoutX="263.0" layoutY="346.0" prefHeight="18.0" prefWidth="83.0" textFill="#43b232">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

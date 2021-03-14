@@ -42,7 +42,7 @@ public class loginPage {
 
     }
 
-    private boolean validUsername() {
+    public boolean validUsername() {
         boolean validUsername = false;
         if (usernames.stream().anyMatch(x -> username.getText().equals(account1.getUsername())
                 || username.getText().equals(account2.getUsername())
@@ -51,7 +51,7 @@ public class loginPage {
         return validUsername;
     }
 
-    private boolean validPassword() {
+    public boolean validPassword() {
         boolean validPassword = false;
         map.put(account1, account1.getPassword());
         map.put(account2, account2.getPassword());
@@ -63,7 +63,7 @@ public class loginPage {
         return validPassword;
     }
 
-    public void setSignupButtonAction() throws IOException {
+    public void setButtonAction() throws IOException {
         openSignUpPage();
     }
 }

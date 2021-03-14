@@ -28,18 +28,17 @@ public class SignUpPage {
     @FXML
     private Button signUpButton;
 
-    public static void openSignUpPage() throws IOException {
+    public static void openSignUpPage() throws IOException{
         try {
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(loginPage.class.getResource("SignUpPage.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 600, 400);
             Stage stage = new Stage();
-            stage.setTitle("New Window");
+            stage.setTitle("Sign Up");
             stage.setScene(scene);
             stage.show();
-        } catch (IOException e) {
-            Logger logger = Logger.getLogger(loginPage.class.getName());
-            logger.log(Level.SEVERE, "Failed to create new Window.", e);
+        } catch (IOException ignored) {
+
         }
     }
 }
