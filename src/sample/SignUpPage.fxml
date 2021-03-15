@@ -5,10 +5,10 @@
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #1634;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.SignUpPage">
    <children>
@@ -20,13 +20,15 @@
       </TextField>
       <TextField fx:id="username" alignment="TOP_CENTER" blendMode="HARD_LIGHT" layoutX="367.0" layoutY="88.0" promptText="Username" />
       <DatePicker fx:id="datePicker" blendMode="LIGHTEN" layoutX="57.0" layoutY="228.0" prefHeight="26.0" prefWidth="112.0" promptText="Birthday" />
-      <Button cache="true" cacheHint="SCALE" depthTest="ENABLE" layoutX="258.0" layoutY="312.0" prefHeight="26.0" prefWidth="83.0" text="Sign Up!" />
-      <PasswordField fx:id="passwordField" alignment="TOP_CENTER" blendMode="HARD_LIGHT" layoutX="367.0" layoutY="161.0" promptText="Password" />
+      <Button fx:id="signUpButton" cache="true" cacheHint="SCALE" depthTest="ENABLE" layoutX="258.0" layoutY="312.0" onAction="#abilityToSignUp" prefHeight="26.0" prefWidth="83.0" text="Sign Up!" />
+      <PasswordField fx:id="passwordField" accessibleRole="TEXT_FIELD" alignment="TOP_CENTER" blendMode="LIGHTEN" layoutX="367.0" layoutY="161.0" promptText="password" />
       <Label fx:id="wrongPasswordLabel" alignment="TOP_CENTER" layoutX="383.0" layoutY="200.0" prefHeight="18.0" prefWidth="112.0" text="Label" />
-      <Label fx:id="wrongSignUpLabel" layoutX="263.0" layoutY="346.0" prefHeight="18.0" prefWidth="83.0" textFill="#43b232">
+      <Label fx:id="wrongSignUpLabel" alignment="TOP_CENTER" layoutX="142.0" layoutY="352.0" prefHeight="47.0" prefWidth="316.0" textFill="#43b232">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
+      <Button fx:id="generatePassword" layoutX="364.0" layoutY="241.0" mnemonicParsing="false" onAction="#passwordRandomizer" prefHeight="26.0" prefWidth="149.0" text="Generate Password" />
+      <RadioButton fx:id="radioButton" layoutX="527.0" layoutY="165.0" mnemonicParsing="false" onAction="#setRadioButtonAction" text="show" />
    </children>
 </AnchorPane>
