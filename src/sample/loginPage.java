@@ -66,4 +66,8 @@ public class loginPage {
     public void setButtonAction() throws IOException {
         openSignUpPage();
     }
+
+    public List<String> getUsernameList(){
+        return List.copyOf(usernames);
+    }
 }
