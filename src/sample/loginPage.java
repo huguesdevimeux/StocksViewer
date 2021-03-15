@@ -2,15 +2,13 @@ package sample;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 
+import static sample.OpenContactInfo.openInfoPage;
 import static sample.SignUpPage.openSignUpPage;
 
 public class loginPage {
@@ -69,5 +67,9 @@ public class loginPage {
 
     public List<String> getUsernameList(){
         return List.copyOf(usernames);
+    }
+
+    public void setContactInfoButtonAction() throws IOException {
+        openInfoPage();
     }
 }
