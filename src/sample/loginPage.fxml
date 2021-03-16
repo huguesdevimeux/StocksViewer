@@ -67,6 +67,7 @@
             <Button fx:id="signup" layoutX="322.0" layoutY="332.0" mnemonicParsing="false" onAction="#setButtonAction" prefHeight="32.0" prefWidth="235.0" text="Sign up here!" />
             <Label fx:id="failedSignInLabel" alignment="TOP_CENTER" layoutX="333.0" layoutY="246.0" prefHeight="18.0" prefWidth="210.0" textFill="RED" />
             <PasswordField fx:id="password" layoutX="364.0" layoutY="187.0" promptText="password" />
+            <Button layoutX="488.0" layoutY="230.0" mnemonicParsing="false" onAction="#open" text="Button" />
          </children>
     </AnchorPane>
   </children>

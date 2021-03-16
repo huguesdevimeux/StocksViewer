@@ -36,6 +36,7 @@ public class SignUpPage {
     private final loginPage a = new loginPage();
     private final List<String> currentAccountsUsernames = a.getUsernameList();
     private final PasswordVerificator passwordVerificator = new PasswordVerificator();
+    public static Account createdAccount;
 
     public static void openSignUpPage() throws IOException {
         try {
@@ -66,7 +67,10 @@ public class SignUpPage {
 
     public void abilityToSignUp() {
         boolean valid = !(name.getText().isBlank() || lastName.getText().isBlank() || datePicker == null) && validPassword() && validUsername();
-        if (valid) wrongSignUpLabel.setText("SIGN UP SUCCESSFUL :)");
+        if (valid) {
+            wrongSignUpLabel.setText("SIGN UP SUCCESSFUL :)");
+            createdAccount = new Account(username.getText(), passwordField.getText());
+        }
         else {
             wrongSignUpLabel.setText("Username or Password is wrong");
             wrongSignUpLabel.setTextFill(Color.RED);

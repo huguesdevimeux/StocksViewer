@@ -1,8 +1,10 @@
 package sample;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -36,6 +38,7 @@ public class loginPage {
             failedSignInLabel.setText("Username or password is wrong!");
         } else {
             failedSignInLabel.setText("");
+            StocksInfo.openStocksPage();
         }
 
     }
@@ -65,11 +68,15 @@ public class loginPage {
         openSignUpPage();
     }
 
-    public List<String> getUsernameList(){
+    public List<String> getUsernameList() {
         return List.copyOf(usernames);
     }
 
     public void setContactInfoButtonAction() throws IOException {
         openInfoPage();
+    }
+
+    public void open() throws IOException {
+        StocksInfo.openStocksPage();
     }
 }
