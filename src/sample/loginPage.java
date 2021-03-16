@@ -72,4 +72,8 @@ public class loginPage {
     public void setContactInfoButtonAction() throws IOException {
         openInfoPage();
     }
+
+    public void openNotePad(){
+        openNotePad();
+    }
 }
