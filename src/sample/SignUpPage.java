@@ -4,15 +4,14 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.layout.Background;
 import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.List;
 
 public class SignUpPage {
+
     @FXML
     private TextField name;
     @FXML
@@ -34,7 +33,7 @@ public class SignUpPage {
     @FXML
     private RadioButton radioButton;
     private final loginPage a = new loginPage();
-    private final List<String> currentAccountsUsernames = a.getUsernameList();
+    private List<String> currentAccountsUsernames = a.getUsernameList();
     private final PasswordVerificator passwordVerificator = new PasswordVerificator();
     public static Account createdAccount;
 
@@ -69,23 +68,33 @@ public class SignUpPage {
         boolean valid = !(name.getText().isBlank() || lastName.getText().isBlank() || datePicker == null) && validPassword() && validUsername();
         if (valid) {
             wrongSignUpLabel.setText("SIGN UP SUCCESSFUL :)");
-            createdAccount = new Account(username.getText(), passwordField.getText());
-        }
-        else {
+            wrongSignUpLabel.setTextFill(Color.GREEN);
+            a.addAccount(username.getText(), passwordField.getText());
+            reOpenUpdatedLoginPage();
+        } else {
             wrongSignUpLabel.setText("Username or Password is wrong");
             wrongSignUpLabel.setTextFill(Color.RED);
         }
     }
 
     public boolean validUsername() {
-        boolean valid = true;
-        for (String s : currentAccountsUsernames) {
-            if (username.getText().equals(s)) valid = false;
-        }
-        return valid;
+        return currentAccountsUsernames.stream().noneMatch(username.getText()::equals);
     }
 
     public boolean validPassword() {
         return passwordVerificator.userPassword(passwordField.getText());
+    }
+
+    public void reOpenUpdatedLoginPage() {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(loginPage.class.getResource("loginPage.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+            Stage stage = new Stage();
+            stage.setTitle("Login");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException ignored) {
+        }
     }
 }

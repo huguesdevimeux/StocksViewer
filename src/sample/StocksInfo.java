@@ -44,17 +44,17 @@ public class StocksInfo {
     }
 
     public void setvBox() {
-        vBox.getChildren().add(new TextField("Set Stock Name"));
-        vBoxBis.getChildren().add(new TextField("enter URL"));
-        vBoxOpenUrl.getChildren().add(new Button("Open"));
-    }
+        Button open = new Button("open");
+        TextField URLtext = new TextField();
+        URLtext.setPromptText("enter URL");
+        TextField stockName = new TextField();
+        stockName.setPromptText("enter Stock name");
 
-    public void openStockURL() {
-        for (Node node : vBoxOpenUrl.getChildren()) {
-            for (int i = 0; i < vBoxBis.getChildren().size(); i++) {
-                openURL(vBoxBis.getChildren().get(i).getAccessibleText());
-            }
-        }
+        vBox.getChildren().add(stockName);
+        vBoxBis.getChildren().add(URLtext);
+        vBoxOpenUrl.getChildren().add(open);
+        open.setOnAction(event -> {
+            openURL(URLtext.getText());
+        });
     }
-
 }
