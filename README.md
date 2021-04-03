@@ -6,8 +6,7 @@
   __Configurations:__
   
   - Download any version of JavaFX SDK at https://gluonhq.com/products/javafx/
-  In project Structure add folder ```lib``` found in the zip folder downloaded above.
-  
+  - In project Structure add folder ```lib``` found in the zip folder downloaded above.
   
   - in menu bar: run -> edit configurations -> modify options -> add VM options 
   
