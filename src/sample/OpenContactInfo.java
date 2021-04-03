@@ -15,7 +15,7 @@ public class OpenContactInfo {
     @FXML
     private Hyperlink hyperlink = new Hyperlink();
 
-    public static void openInfoPage() throws IOException {
+    public static void openInfoPage() {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(loginPage.class.getResource("ContactInfoPage.fxml"));

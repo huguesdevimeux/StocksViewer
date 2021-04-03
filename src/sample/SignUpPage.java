@@ -32,8 +32,9 @@ public class SignUpPage {
     private Button generatePassword;
     @FXML
     private RadioButton radioButton;
-    private final loginPage a = new loginPage();
-    private List<String> currentAccountsUsernames = a.getUsernameList();
+
+    private loginPage a = new loginPage();
+    private List<Account> currentAccountsUsernames = a.getUsernameList();
     private final PasswordVerificator passwordVerificator = new PasswordVerificator();
     public static Account createdAccount;
 
@@ -65,7 +66,7 @@ public class SignUpPage {
     }
 
     public void abilityToSignUp() {
-        boolean valid = !(name.getText().isBlank() || lastName.getText().isBlank() || datePicker == null) && validPassword() && validUsername();
+        boolean valid = !(name.getText().isBlank() || lastName.getText().isBlank()) && validPassword() && validUsername();
         if (valid) {
             wrongSignUpLabel.setText("SIGN UP SUCCESSFUL :)");
             wrongSignUpLabel.setTextFill(Color.GREEN);
@@ -78,7 +79,7 @@ public class SignUpPage {
     }
 
     public boolean validUsername() {
-        return currentAccountsUsernames.stream().noneMatch(username.getText()::equals);
+        return currentAccountsUsernames.stream().noneMatch(x -> username.getText().equals(x.getUsername()));
     }
 
     public boolean validPassword() {

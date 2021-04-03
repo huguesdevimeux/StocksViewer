@@ -45,6 +45,13 @@
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="372.0" prefWidth="526.0" style="-fx-background-color: #1634;" VBox.vgrow="ALWAYS">
          <children>
+            <TextField fx:id="username" layoutX="364.0" layoutY="115.0" promptText="username" />
+            <Label layoutX="270.0" layoutY="119.0" text="Username" />
+            <Label layoutX="270.0" layoutY="191.0" text="Password" />
+            <Button fx:id="signin" layoutX="322.0" layoutY="282.0" mnemonicParsing="false" onAction="#setLoginButtonAction" prefHeight="32.0" prefWidth="235.0" text="Sign in " />
+            <Button fx:id="signup" layoutX="322.0" layoutY="332.0" mnemonicParsing="false" onAction="#setButtonAction" prefHeight="32.0" prefWidth="235.0" text="Sign up here!" />
+            <Label fx:id="failedSignInLabel" alignment="TOP_CENTER" layoutX="333.0" layoutY="246.0" prefHeight="18.0" prefWidth="210.0" textFill="RED" />
+            <PasswordField fx:id="password" layoutX="364.0" layoutY="187.0" promptText="password" />
             <AnchorPane layoutX="-14.0" layoutY="-9.0" prefHeight="409.0" prefWidth="228.0" style="-fx-background-color: black;">
                <children>
                   <Text fill="WHITE" layoutX="67.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome." wrappingWidth="94.71051025390625">
@@ -60,14 +67,6 @@
                   <Button fx:id="contactInfo" layoutX="50.0" layoutY="294.0" mnemonicParsing="false" onAction="#setContactInfoButtonAction" text="Contact information" />
                </children>
             </AnchorPane>
-            <TextField fx:id="username" layoutX="364.0" layoutY="115.0" promptText="username" />
-            <Label layoutX="270.0" layoutY="119.0" text="Username" />
-            <Label layoutX="270.0" layoutY="191.0" text="Password" />
-            <Button fx:id="signin" layoutX="322.0" layoutY="282.0" mnemonicParsing="false" onAction="#setLoginButtonAction" prefHeight="32.0" prefWidth="235.0" text="Sign in " />
-            <Button fx:id="signup" layoutX="322.0" layoutY="332.0" mnemonicParsing="false" onAction="#setButtonAction" prefHeight="32.0" prefWidth="235.0" text="Sign up here!" />
-            <Label fx:id="failedSignInLabel" alignment="TOP_CENTER" layoutX="333.0" layoutY="246.0" prefHeight="18.0" prefWidth="210.0" textFill="RED" />
-            <PasswordField fx:id="password" layoutX="364.0" layoutY="187.0" promptText="password" />
-            <Button layoutX="488.0" layoutY="230.0" mnemonicParsing="false" onAction="#open" text="Button" />
          </children>
     </AnchorPane>
   </children>
