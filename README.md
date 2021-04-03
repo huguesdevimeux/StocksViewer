@@ -1,7 +1,7 @@
 # Stocks viewer
 
 ## Using FXML and JavaFX 
-  Login/Sign up to have access to a stocks viewer page, input URL and press open and live the Stonks Life.
+  Login/Sign up to open a stocks viewer page, input URL and press open and live the Stonks Life.
   
   __Configurations:__
   
