@@ -87,4 +87,8 @@ public class loginPage {
     public void open() throws IOException {
         StocksInfo.openStocksPage();
     }
+
+    public void exit(){
+        System.exit(0);
+    }
 }

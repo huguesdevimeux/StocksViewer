@@ -18,8 +18,8 @@ public class StocksInfo {
     private VBox vBox;
     @FXML
     private VBox vBoxOpenUrl;
-    @FXML
-    private VBox vBoxBis;
+
+    private final String OPEN_SEARCH = "https://www.google.com/search?q=";
 
     public static void openStocksPage() throws IOException {
         try {
@@ -30,30 +30,29 @@ public class StocksInfo {
             stage.setTitle("Information page");
             stage.setScene(scene);
             stage.show();
-        } catch (IOException ignored) {
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
     private void openURL(String URL) {
         try {
             Desktop.getDesktop().browse(new URI(URL));
-        } catch (IOException | URISyntaxException e1) {
-            e1.printStackTrace();
+        } catch (IOException | URISyntaxException e) {
+            e.printStackTrace();
         }
     }
 
     public void setvBox() {
         Button open = new Button("open");
-        TextField URLtext = new TextField();
-        URLtext.setPromptText("enter URL");
         TextField stockName = new TextField();
         stockName.setPromptText("enter Stock name");
-
         vBox.getChildren().add(stockName);
-        vBoxBis.getChildren().add(URLtext);
         vBoxOpenUrl.getChildren().add(open);
-        open.setOnAction(event -> {
-            openURL(URLtext.getText());
-        });
+        open.setOnAction(event ->
+                openURL(OPEN_SEARCH + stockName.getText().replace(" ", "+") + "+stocks"));
+    }
+    public void exit(){
+        System.exit(0);
     }
 }

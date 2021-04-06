@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.StocksInfo">
    <children>
-      <VBox fx:id="vBox" layoutX="15.0" layoutY="115.0" prefHeight="235.0" prefWidth="118.0" AnchorPane.topAnchor="115.0" />
-      <TextArea editable="false" layoutX="180.0" layoutY="14.0" prefHeight="18.0" prefWidth="214.0" text="Feel free to add stocks by pressing +" />
-      <Button layoutX="47.0" layoutY="71.0" mnemonicParsing="false" onAction="#setvBox" text="+" />
-      <VBox fx:id="vBoxBis" layoutX="303.0" layoutY="115.0" prefHeight="18.0" prefWidth="266.0" />
-      <Text layoutX="403.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter URLs" />
-      <VBox fx:id="vBoxOpenUrl" layoutX="221.0" layoutY="115.0" prefHeight="18.0" prefWidth="100.0" />
+      <VBox fx:id="vBox" layoutX="121.0" layoutY="115.0" prefHeight="235.0" prefWidth="118.0" AnchorPane.topAnchor="115.0" />
+      <Button layoutX="168.0" layoutY="71.0" mnemonicParsing="false" onAction="#setvBox" text="+" />
+      <VBox fx:id="vBoxOpenUrl" layoutX="356.0" layoutY="115.0" prefHeight="18.0" prefWidth="100.0" />
+      <Text layoutX="203.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Feel free to add stocks by pressing +" />
+      <Button layoutX="52.0" layoutY="338.0" mnemonicParsing="false" onAction="#exit" text="close" />
    </children>
 </AnchorPane>
