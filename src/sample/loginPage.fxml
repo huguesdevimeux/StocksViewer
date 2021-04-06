@@ -65,6 +65,7 @@
                      </font>
                   </Text>
                   <Button fx:id="contactInfo" layoutX="50.0" layoutY="294.0" mnemonicParsing="false" onAction="#setContactInfoButtonAction" text="Contact information" />
+                  <Button layoutX="89.0" layoutY="357.0" mnemonicParsing="false" onAction="#exit" text="close" />
                </children>
             </AnchorPane>
          </children>
